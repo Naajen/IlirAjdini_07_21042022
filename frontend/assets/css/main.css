@@ -1,0 +1,15 @@
+#container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+#imagefront {
+  width: 25%;
+  height: 25%;
+}
+/*# sourceMappingURL=main.css.map */
