@@ -1,7 +1,7 @@
- 
 //Faire les require à l'app & le http
 const http = require('http'); //module http pour createServer
 const app = require('./app');
+require('dotenv').config();
 
 
 //fonction normalizePort renvoie un port valide, fourni sous forme d'un numéro ou d'une chaîne
@@ -40,7 +40,7 @@ const errorHandler = error => {
 };
 
 //Création d'un port d'écoute consignant le port ou le canal sur lequel le serveur va s'executer, ici le port 3000 max 65535
-const port = normalizePort('3000' || '3001');
+const port = normalizePort(process.env.PORT|| '3001');
 app.set('port', port);
 
 //Creation du serveur createServer()
