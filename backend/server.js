@@ -54,7 +54,7 @@ server.on('listening', () => {
   console.log('Listening on ' + bind);
 });
 
-//Le serveur écoute le port 3000 ou 1337 ou 3001 en fonction de la disponnibilité
+//Le serveur écoute le port 3000 ou 3001 en fonction de la disponnibilité
 server.listen(port);
 
 
