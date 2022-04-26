@@ -1,22 +1,6 @@
 const express = require('express');
 const mysql = require('mysql');
 //const MySQL = require('mysql-database'); ?? package 
-require('dotenv').config();
-
-const connectionDB = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : process.env.mysqlWorld,
-    database : process.env.DB
-})
-//.then(() => console.log('Connexion à la DB réussie !')) //si la connection est bonne
-//.catch(() => console.log('Connexion à la DB échouée !')); //si la connection n'est pas bonne
-
-module.exports.getDB = function()
-    {
-    return connectionDB;
-    }
-
 
 const app = express();
 
@@ -32,6 +16,8 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
+
+
 
 //exportation du module app pour les autres fichiers s'il n'est pas présent un  "app.set('port', port); erreur" 
 module.exports = app;
