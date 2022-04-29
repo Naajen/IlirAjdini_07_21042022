@@ -1,3 +1,5 @@
+/***************Revoir le code pour le token******************/
+
 //importation jsonwebtoken
 const jwt = require('jsonwebtoken');
 

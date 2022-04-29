@@ -1,6 +1,4 @@
 const express = require('express');
-const mysql = require('mysql');
-//const MySQL = require('mysql-database'); ?? package 
 
 const app = express();
 
@@ -16,8 +14,6 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
-
-
 
 //exportation du module app pour les autres fichiers s'il n'est pas présent un  "app.set('port', port); erreur" 
 module.exports = app;

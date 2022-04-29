@@ -1,1 +1,1 @@
-//modele uniquement lors d'un NoSQL ?????
+//pas de NoSQL est ce que les schema est necessaire ? 

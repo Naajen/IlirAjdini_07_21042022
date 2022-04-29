@@ -1,5 +1,4 @@
 const mysql = require('mysql');
-require('dotenv').config();
 
 const connectionDB = mysql.createConnection({
     host     : 'localhost',
@@ -10,7 +9,7 @@ const connectionDB = mysql.createConnection({
 connectionDB.connect(function (err) {
     if (err) 
     throw err;
-    console.log("Connecté à la base de données MySQL!");
+    console.log(">>>>Connecté à la base de données MySQL!<<<<");
 })
 //.then(() => console.log('Connexion à la DB réussie !')) //si la connection est bonne
 //.catch(() => console.log('Connexion à la DB échouée !')); //si la connection n'est pas bonne
