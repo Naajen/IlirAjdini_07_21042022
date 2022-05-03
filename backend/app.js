@@ -1,4 +1,7 @@
 const express = require('express');
+const mysql = require('./utils/mysqlDB')
+//importation de la route de verif des users
+const userRoutes = require('./routes/user')
 
 const app = express();
 
@@ -12,8 +15,8 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS'); //put et patch font sensiblement la meme chose
     next();
 });
-
 app.use(express.json());
-
+//utilisation de l'api de l'authentification
+app.use('/api/auth', userRoutes);
 //exportation du module app pour les autres fichiers s'il n'est pas présent un  "app.set('port', port); erreur" 
 module.exports = app;

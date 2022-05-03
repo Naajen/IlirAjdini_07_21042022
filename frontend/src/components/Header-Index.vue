@@ -8,21 +8,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-
-            <li class="nav-item">
-              <router-link class="nav-link" to="/">Home</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/Signup">S'inscrire</router-link>
-            </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/Login">Se connecter</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/create-post">Main</router-link>
             </li>
           </ul>
         </div>
       </div>
     </nav>
   </div>
+
 </template>
 
 <script>

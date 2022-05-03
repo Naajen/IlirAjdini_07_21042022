@@ -3,24 +3,21 @@
     <form>
     <h4>Pas encore de compte ? Inscrivez-vous</h4>
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Pseudo</label>
-        <input type="text" placeholder="Pseudo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label for="name" class="form-label">Nom</label>
+        <input 
+        type="text" 
+        placeholder="Dupont.." 
+        class="form-control" 
+        id="name"  
+        aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Nom</label>
-        <input type="text" placeholder="Nom" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label for="Email" class="form-label">E-Mail</label>
+        <input type="email" placeholder="Dupont@gmail.com" class="form-control" id="email" aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Prénom</label>
-        <input type="text" placeholder="Prénom" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">E-Mail</label>
-        <input type="email" placeholder="E-Mail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="myInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Il faut un minimum de 8 caractères, 1 Majuscule et 1 Chiffre" required>
+        <label for="InputPassword" class="form-label">Password</label>
+        <input type="password" placeholder="Entrer votre mot de passe" class="form-control" id="PassSignup" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Il faut un minimum de 8 caractères, 1 Majuscule et 1 Chiffre" required>
       </div>
         <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input"  @click="seeYou()" id="exampleInputPassword1">
@@ -33,18 +30,71 @@
 
 
 <script>
-export default {
-    name: 'Login-users',
+import { required, email, minLength } from 'vuelidate/lib/validators'
 
+export default {
+    name: 'Signup-users',
+
+    data() {
+        return {
+            name: '',
+            email: '',
+            password: ''
+        }
+    },
     methods: {
+        login() {
+          const self = this;
+          this.$store.dispatch('login', {
+              email: this.email,
+              password: this.password
+          }).then(function() {
+              self.$router.push('/posts')
+              self.$store.dispatch('getUserInfos');
+          }, function(error) {
+            console.log(error);
+          });
+        },
+
+        submitForm() {
+          this.$v.$touch();
+          if (!this.$v.$invalid) {
+              const self = this;
+              this.$store.dispatch('createAccount', {
+                name: this.name,
+                email: this.email,
+                password: this.password
+            }).then(function() {
+            // Après l'inscription, se connecter immédiatement
+              self.login();
+            }, function(error) {
+              console.log(error);
+            })
+          }
+        },
         seeYou : function () {
-        var x = document.getElementById("myInput");
+        var x = document.getElementById("PassSignup");
         if (x.type === "password") {
             x.type = "text";
         } else {
             x.type = "password";
         }}
-    }
+    },
+    validations: {
+      name: {
+        required
+      },
+
+      email: {
+        required,
+        email
+      },
+
+      password: {
+        required,
+        minLength: minLength(8),
+      }
+    },
 }
 
 </script>
@@ -53,16 +103,16 @@ export default {
 
 </style>
 <style scoped lang="scss">
-form {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-}
-.main {
+  form {
     display: flex;
-    display: flex;
-    display: flex;
-    justify-content: center;
-    margin-top:50px;
-}
+    flex-direction: column;
+    width: 300px;
+  }
+  .main {
+      display: flex;
+      display: flex;
+      display: flex;
+      justify-content: center;
+      margin-top:50px;
+  }
 </style>
