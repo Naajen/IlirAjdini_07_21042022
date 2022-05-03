@@ -3,15 +3,15 @@ const jwt = require('jsonwebtoken');
 const connectionDB = require("../utils/mysqlDB")
 
 // S'inscrire
-exports.signup = (req, res) => {
+exports.signup = async (req, res) => {
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
   const sqlInsert = 'INSERT INTO users SET ?';
   if (regex.test(req.body.password)) {
-    bcrypt.hash(req.body.password,10)
+    await bcrypt.hash(req.body.password,10)
     .then((hash) => {
       const user = {
         name: req.body.name,
-        email: req.body.email,
+        email: req.body.email, //Un hashage du mail est posible avec crypto-JS
         password:hash
       }
       //request SQL table users ? évite les injection SQL on envoi le array user après le INSERT
@@ -19,7 +19,7 @@ exports.signup = (req, res) => {
           if (error) {
             res.json ({error});
           } else {
-            res.json ({ message : "users créer"});
+            res.json ({ message : "user créer"});
           }
         }
       )
@@ -30,8 +30,8 @@ exports.signup = (req, res) => {
       message: 'Le mot de passe doit avoir au moins 8 caractères, un chiffre, et une majuscule'
     })
   }
-
 }
+//Se connecter
 exports.login = (req, res, next) => {
     const email = req.body.email;
     const sqlMail = 'SELECT * FROM users WHERE email = ?';
