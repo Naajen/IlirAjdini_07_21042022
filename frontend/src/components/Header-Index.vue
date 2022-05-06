@@ -1,5 +1,5 @@
 <template>
-  <div class="container header-w">
+  <div class="container-main header-w">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="#">Groupomania</a>

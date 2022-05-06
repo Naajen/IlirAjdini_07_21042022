@@ -1,13 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
-//importation du controllers/user.js
-const userCtrl = require('../controllers/user');
+const userController = require('../controllers/user.controller');
+const auth = require('../middlewares/auth.middleware');
 
-//la route (endpoint) signup + le mdlware password doit avoir un mdp plus élaboré
-router.post('/signup', userCtrl.signup);
-//la route (endpoint) login
-router.post('/login',  userCtrl.login);
+// Routes pour les utilisateurs << les routes sont validé ! par postman !>>
+router.post('/signup', userController.signup);
+router.post('/login', userController.login);
+router.get('/user/:id', auth, userController.getOneUser);
+router.put('/user/:id', auth, userController.modifyUser);
+router.delete('/user/:id', auth, userController.deleteUser);
 
-//exportation du module
+// Routes pour les admins <<< NON validé encore >>>
+router.get('/admin/users/:id', auth, userController.getAllUsersByAdmin);
+router.put('/admin/users/:id', auth, userController.modifyUserRole);
+
 module.exports = router;

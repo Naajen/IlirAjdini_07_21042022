@@ -1,7 +1,14 @@
-const express = require('express');
-const mysql = require('./utils/mysqlDB')
-//importation de la route de verif des users
-const userRoutes = require('./routes/user')
+const express = require ('express')
+//const helmet = require('helmet');
+const bodyParser = require('body-parser');
+const path = require('path');
+const db = require('./config/db');
+const cors = require("cors");
+
+const userRoutes = require('./routes/user');
+const postRoutes = require('./routes/post');
+
+
 
 const app = express();
 
@@ -15,8 +22,15 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS'); //put et patch font sensiblement la meme chose
     next();
 });
+
 app.use(express.json());
-//utilisation de l'api de l'authentification
+//app.use(helmet)
+app.use(bodyParser.json());
+app.use(cors());
+
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
 app.use('/api/auth', userRoutes);
+app.use('/api/posts', postRoutes);
 //exportation du module app pour les autres fichiers s'il n'est pas présent un  "app.set('port', port); erreur" 
 module.exports = app;
