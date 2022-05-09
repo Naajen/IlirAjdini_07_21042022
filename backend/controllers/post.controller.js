@@ -20,7 +20,7 @@ exports.createPost = (req, res) => {
             message: 'Post créé avec succès'}))
         .catch(error => res.status(400).json({ message: 'Impossible de créer ce post', error }));
 };
-// Afficher tous les posts (plus récents)
+// Afficher tous les posts (le plus récents avec le order / DESC)
 exports.getAllPosts = (req, res) => {
     Post.findAll({
             order: [

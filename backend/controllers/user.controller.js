@@ -6,7 +6,7 @@ const Sq = require('sequelize').Sq;
 
 // S'inscrire nom/email/password
 exports.signup = (req, res) => {
-    // Valider le mot de passe
+    // Valider le mot de passe expression regulière
     var regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
     if (regex.test(req.body.password)) {
         bcrypt.hash(req.body.password, 10)
@@ -105,7 +105,6 @@ exports.modifyUser = (req, res) => {
             message: 'Impossible de modifier cet utilisateur',
             error
         }));
-
 }
 
 // Supprimer un user

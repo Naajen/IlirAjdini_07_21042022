@@ -4,7 +4,6 @@
         <table class="table table-striped table-responsive" v-if="users.length !== 0">
             <thead>
                 <tr>
-
                     <th scope="col">Nom</th>
                     <th scope="col">Rôle</th>
                     <th scope="col">Actions</th>

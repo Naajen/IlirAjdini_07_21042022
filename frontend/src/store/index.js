@@ -17,7 +17,7 @@ const defaultUser = {
 let user = localStorage.getItem('user');
 
 // Si l'utilisateur n'est pas dans le local storage, l'utilisateur est par défaut
-    // Sinon récupérer l'utilisateur du local storage
+// Sinon récupérer l'utilisateur du local storage
 if (!user) {
     user = defaultUser;
     console.log(user, "if !user = defaultUser");

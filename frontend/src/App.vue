@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <header-top></header-top>
+        <Header/>
         <div class="content">
             <b-container>
                 <b-row class="justify-content-center">
@@ -20,7 +20,7 @@
         name: 'App',
 
         components: {
-            'header-top': Header
+            'Header': Header
         },
 
         mounted: function() {

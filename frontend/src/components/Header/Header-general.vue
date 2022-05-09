@@ -4,8 +4,11 @@
             <b-container class="dark">
                 <b-navbar variant="faded" type="light">
                     <b-navbar-brand>
-                        <router-link to="/" class="nav-link">
-                            <img src="../../assets/images/logo.svg" class="d-inline-block align-top logo" alt="Groupomania">
+                        <router-link v-if="status != 'login'"  to="/" class="nav-link">
+                            <img  src="../../assets/images/logo.svg" class="d-inline-block align-top logo" alt="Groupomania">
+                        </router-link>
+                        <router-link v-if="status == 'login'" to="/posts" class="nav-link">
+                            <img  src="../../assets/images/logo.svg" class="d-inline-block align-top logo" alt="Groupomania" >
                         </router-link>
                     </b-navbar-brand>
                 </b-navbar>
@@ -29,7 +32,7 @@
                         <b-nav-item-dropdown v-if="status == 'login' && userName" right>
                             <template #button-content><b-icon-person-fill></b-icon-person-fill> {{ userName }}</template>
                             <li>
-                                <router-link to="/profil" class="dropdown-item">
+                                <router-link v-if="status == 'login'" to="/profil" class="dropdown-item">
                                     <b-icon icon="person-fill"></b-icon> Profil
                                 </router-link>
                             </li>
@@ -41,6 +44,11 @@
                             <li>
                                 <router-link to="/delete-user" class="dropdown-item">
                                     <b-icon-trash-fill></b-icon-trash-fill> Suppression
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link to="#" class="dropdown-item">
+                                   <p class="copyright">Groupomania &copy; {{ new Date().getFullYear() }}</p>
                                 </router-link>
                             </li>
                             <div v-if="isAdmin" class="dropdown-divider"></div>
@@ -100,4 +108,39 @@
     }
 </script>
 
-<style scoped src="./Header.css"></style>
+<style scoped >
+.ml-auto {
+    margin-left: auto !important;
+}
+.copyright {
+    font-size: 0.9em;
+}
+.logo {
+    width: 230px;
+    height: auto;
+}
+.nav-link.router-link-exact-active {
+    color: #FFF !important;
+}
+
+.navbar-nav {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.navbar-nav button.btn-danger {
+    margin: 0 8px;
+}
+.copyright {
+    margin-top: 15px;
+    font-size: 0.7em;
+}
+.bg-info {
+    background-color: #2C2F33 !important;
+}
+@media screen and (max-width:320px) {
+    .logo  {
+        width: 180px; 
+    }
+}
+</style>

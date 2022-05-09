@@ -1,33 +1,25 @@
 <template>
     <div class="card-groupomania">
-        <div>
-            <h1>Profil de : {{ name }}</h1>
+        <div class="profil">
+            <b-avatar src="https://placekitten.com/300/300" size="10rem"></b-avatar>
+        </div>
+        <div class="self-information">
+            <h1>Profil de : {{ name }} </h1>
+            <h2>E-mail : {{ email }} </h2>
         </div>
     </div>
 </template>
 
 <script>
-    import { required } from 'vuelidate/lib/validators'
-
+    
     export default {
-        mounted: function() {
-            this.$store.dispatch('getUserInfos');
-        },
-
-        validations: {
-            name: {
-                required
-            }
-        },
+        name: 'profil-user',
 
         computed: {
             name: {
                 get() {
                     return this.$store.state.userInfos.name;
                 },
-                set(newName) {
-                    this.$store.commit('SET_USER_NAME', newName)
-                }
             },
 
             email: {
@@ -35,32 +27,19 @@
                     return this.$store.state.userInfos.email;
                 }
             },
-
-            invalidateFields: function() {
-                if (this.$v.$invalid) {
-                    return true
-                } else {
-                    return false
+            create: {
+                get() {
+                    return this.$store.state.userInfos;
                 }
-            }
+            },
         },
-
-        methods: {
-            submitForm() {
-                this.$v.$touch();
-
-                if (!this.$v.$invalid) {
-                    this.$store.dispatch('editUserName', { 
-                    name: this.name 
-                    }).then(function() {
-                        console.log('Utilisateur modifié avec succès !')
-                    }, function(error) {
-                        console.log(error);
-                    });
-                }
-            }
-        }
     }
 </script>
 
-<style></style>
+<style>
+.profil{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+</style>

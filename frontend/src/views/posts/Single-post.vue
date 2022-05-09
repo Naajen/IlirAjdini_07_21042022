@@ -4,8 +4,8 @@
         <div class="single-post">
             <div class="user">
                 <div class="user-info" v-if="post.User">
-                    <b-avatar></b-avatar>
-                    <h2>{{ post.User.name }}</h2>
+                        <b-avatar></b-avatar>
+                        <h2>{{ post.User.name }}</h2>
                 </div>
                 <div v-if="hasPostRole || isAdmin" class="user-actions">
                     <router-link v-if="hasPostRole && post.id" :to="{ name: 'modifyPost', params: { id: post.id }}">
@@ -36,6 +36,7 @@
         <!-- Comments -->
         <div class="card-groupomania" v-if="comments.length !== 0">
             <!-- Comment -->
+            <h5>Les commentaires : </h5>
             <div class="comment-card" v-for="(comment, index) in comments" :key="comment.id">
                 <div class="user">
                     <div class="user-info" v-if="comment.User">
@@ -46,7 +47,6 @@
                         <router-link v-if="hasCommentRole(index) && comment.id" :to="{ name: 'modifyComment', params: { postId: comment.postId, id: comment.id }}">
                             <b-button variant="success" class="btn-circle"><b-icon-pencil-fill></b-icon-pencil-fill></b-button>
                         </router-link>
-
                         <router-link v-if="(hasCommentRole(index) || isAdmin) && comment.id" :to="{ name: 'deleteComment', params: { postId: comment.postId, id: comment.id }}">
                             <b-button variant="danger" class="btn-circle"><b-icon-trash-fill></b-icon-trash-fill></b-button>
                         </router-link>
@@ -132,7 +132,7 @@
                         console.log(error);
                     })
                 }
-            }
+            },
         }
     }
 </script>

@@ -18,10 +18,7 @@
             </div>
             <div class="comment">
                 <router-link v-if="post.id" :to="{ name: 'singlePost', params: { id: post.id }}">
-                    <b-button variant="secondary"><b-icon-eye-fill></b-icon-eye-fill>Lire plus</b-button>
-                </router-link>
-                <router-link v-if="post.id" :to="{ name: 'singlePost', params: { id: post.id }}">
-                    <b-button variant="primary"><b-icon-chat-dots-fill></b-icon-chat-dots-fill> Commenter</b-button>
+                    <b-button variant="primary">Commenter <b-icon-chat-dots-fill></b-icon-chat-dots-fill></b-button>
                 </router-link>
             </div>
         </div>
@@ -137,8 +134,7 @@
     }
 
     .post-image {
-        max-width:750px;
-        max-height:750px;
+        max-height:550px;
         width: 100%;
         height: 100%;
         object-fit: cover;
