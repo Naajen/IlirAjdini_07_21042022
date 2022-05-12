@@ -64,7 +64,7 @@ export default new Vuex.Store({
                 return false;
             }
         },
-
+        //To do
         isAdmin: state => {
             if (state.userInfos.isAdmin) {
                 return true;
@@ -392,7 +392,7 @@ export default new Vuex.Store({
         // Supprimer un commentaire
         deleteComment({ state }, { postId, id }) {
             // Si c'est l'admin, il peut supprimer n'importe quel commentaire
-                // Sinon l'utilisateur ne peut supprimer que son propre commentaire
+            // Sinon l'utilisateur ne peut supprimer que son propre commentaire
             if (state.userInfos.isAdmin) {
                 return new Promise((resolve, reject) => {
                     instance.delete(`posts/admin/${postId}/comments/${id}`)

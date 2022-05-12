@@ -17,9 +17,10 @@ module.exports = (sequelize, DataTypes) => {
       });
       models.User.hasMany(models.Comment, { 
         onDelete: 'CASCADE', 
-        hooks: true });
+        hooks: true 
+      });
     }
-  }
+}
   User.init({
     name: DataTypes.STRING,
     email: DataTypes.STRING,

@@ -37,7 +37,7 @@ export default [
     { path: '/post/:postId/modify-comment/:id', name: 'modifyComment', component: ModifyComment },
     { path: '/post/:postId/delete-comment/:id', name: 'deleteComment', component: DeleteComment },
 
-    // Admin routes
+    // Admin routes to do 
     // { path: '/admin/users', name: 'allUsers', component: AllUsers },
     // { path: '/admin/modify-user/:id', name: 'adminModifyUser', component: AdminModifyUser },
     // { path: '/admin/delete-user/:id', name: 'adminDeleteUser', component: AdminDeleteUser },

@@ -22,8 +22,10 @@ const router = new VueRouter({
     mode: 'history'
 })
 
+//#app dans l'index va etre monter l'app vue.js
 new Vue({
     render: h => h(App),
     store,
     router
 }).$mount('#app')
+

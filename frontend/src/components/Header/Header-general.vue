@@ -108,6 +108,7 @@
     }
 </script>
 
+<!-- le scoped signifie que le css ne s'applique que à cette page -->
 <style scoped >
 .ml-auto {
     margin-left: auto !important;
