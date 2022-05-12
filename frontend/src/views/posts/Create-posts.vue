@@ -17,7 +17,7 @@
                 <div class="mb-3">{{ imageUrl ? 'Image sélectionnée' : 'Sélectionner une image' }} : <b-button v-if="file" class="btn-remove-file" @click="removeFile()" size="sm" variant="outline-danger">Enlever l'image</b-button></div>
                 <b-form-file v-model="file" plain ref="file-input" accept="image/*" @change="onFilePicked"></b-form-file>
             </b-form-group>
-            <b-button  type="submit" variant="primary" :class="{ 'disabled' : invalidateFields }"><b-icon-plus-circle-fill></b-icon-plus-circle-fill> Publier</b-button>
+            <b-button  type="submit" variant="primary" :class="{ 'disabled' : invalidateFields }" @click="redirection()"><b-icon-plus-circle-fill></b-icon-plus-circle-fill> Publier</b-button>
         </b-form>
     </div>
 </template>
@@ -89,6 +89,9 @@
                         });
                 }
             },
+            redirection() {
+                document.location.href="http://localhost:8080/posts"
+            }
         }
     }
 </script>
