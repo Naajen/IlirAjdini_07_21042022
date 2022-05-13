@@ -33,6 +33,7 @@ if (!user) {
 }
 
 export default new Vuex.Store({
+    //Rayon du store
     state: {
         status: '',
         user: user,
@@ -92,7 +93,7 @@ export default new Vuex.Store({
             }
         },
     },
-
+    //refresh les datas sans refresh la page
     mutations: {
         SET_STATUS: function(state, status) {
             state.status = status;
@@ -168,7 +169,7 @@ export default new Vuex.Store({
             state.userInfosByAdmin.isAdmin = modifiedUserRole;
         }
     },
-
+    //Fonction des routes avec variable dynamique
     actions: {
         // S'inscrire
         createAccount({ commit }, userInfos) {

@@ -15,7 +15,7 @@
                     <td>{{ getUserRole(index) }}</td>
                     <td>
                         <router-link v-if="user.id" :to="{ name: 'adminModifyUser', params: { id: user.id } }">
-                            <b-button variant="success" class="btn-circle"><b-icon-pencil-fill></b-icon-pencil-fill></b-button>
+                            <b-button variant="success" class="btn-circle"><b-icon-pencil-square></b-icon-pencil-square></b-button>
                         </router-link>
                         <router-link v-if="user.id" :to="{ name: 'adminDeleteUser', params: { id: user.id } }">
                             <b-button variant="danger" class="btn-circle"><b-icon-trash-fill></b-icon-trash-fill></b-button>

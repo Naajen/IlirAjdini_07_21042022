@@ -1,6 +1,6 @@
 <template>
     <div class="card-groupomania">
-        <h1><b-icon-pencil-fill></b-icon-pencil-fill> Modifier le rôle</h1>
+        <h1><b-icon-pencil-square></b-icon-pencil-square> Modifier le rôle</h1>
 
         <b-form @submit.prevent="submitForm" class="form">
             <div class="form-group">
@@ -13,7 +13,7 @@
                     <label class="form-check-label" for="user">Utilisateur</label>
                 </div>
             </div>
-            <b-button type="submit" variant="success"><b-icon-pencil-fill></b-icon-pencil-fill> Modifier</b-button>
+            <b-button type="submit" variant="success"> Enregistrer</b-button>
         </b-form>
     </div>
 </template>

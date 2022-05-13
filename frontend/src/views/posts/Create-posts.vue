@@ -4,17 +4,17 @@
 
         <b-form @submit.prevent="submitForm" class="form">
             <b-form-group>
-                <b-form-input placeholder="Titre" type="text" autofocus v-model="$v.title.$model" :class="{ 'is-invalid' : $v.title.$error, 'is-valid' : !$v.title.$invalid }"></b-form-input>
+                <b-form-input placeholder="Votre titre ici" type="text" autofocus v-model="$v.title.$model" :class="{ 'is-invalid' : $v.title.$error, 'is-valid' : !$v.title.$invalid }"></b-form-input>
                 <b-form-invalid-feedback>Le titre est requis</b-form-invalid-feedback>
                 <b-form-valid-feedback>Le titre est valide</b-form-valid-feedback>
             </b-form-group>
             
             <b-form-group>
-                <b-form-textarea v-model="content" placeholder="Contenu" rows="4" max-rows="8"></b-form-textarea>
+                <b-form-textarea v-model="content" placeholder="Dite quelques choses sur le sujet ;)" rows="4" max-rows="8"></b-form-textarea>
             </b-form-group>
 
             <b-form-group>
-                <div class="mb-3">{{ imageUrl ? 'Image sélectionnée' : 'Sélectionner une image' }} : <b-button v-if="file" class="btn-remove-file" @click="removeFile()" size="sm" variant="outline-danger">Enlever l'image</b-button></div>
+                <div class="mb-3">{{ imageUrl ? 'Image sélectionnée' : 'Sélectionner une image ou pas' }} : <b-button v-if="file" class="btn-remove-file" @click="removeFile()" size="sm" variant="outline-danger">Enlever l'image</b-button></div>
                 <b-form-file v-model="file" plain ref="file-input" accept="image/*" @change="onFilePicked"></b-form-file>
             </b-form-group>
             <b-button  type="submit" variant="primary" :class="{ 'disabled' : invalidateFields }" @click="redirectionPost()"><b-icon-plus-circle-fill></b-icon-plus-circle-fill> Publier</b-button>

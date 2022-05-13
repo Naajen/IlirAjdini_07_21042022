@@ -1,6 +1,6 @@
 <template>
     <div class="card-groupomania">
-        <h1><b-icon-pencil-fill></b-icon-pencil-fill> Modifier le compte</h1>
+        <h1><b-icon-pencil-square></b-icon-pencil-square> Modifier le compte</h1>
 
         <b-form @submit.prevent="submitForm" class="form">
             <b-form-group label="Nom" label-for="name">
@@ -13,7 +13,7 @@
                 <b-form-input id="email" :value="email" type="email" required disabled></b-form-input>
             </b-form-group>
         
-            <b-button type="submit" variant="success" :class="{ 'disabled' : invalidateFields }" @click="redirectionProfil()"><b-icon-pencil-fill></b-icon-pencil-fill> Modifier</b-button>
+            <b-button type="submit" variant="success" :class="{ 'disabled' : invalidateFields }" @click="redirectionProfil()"> Enregistrer</b-button>
         </b-form>
     </div>
 </template>

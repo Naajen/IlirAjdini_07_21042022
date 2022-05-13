@@ -4,8 +4,8 @@
             <b-avatar src="https://placekitten.com/300/300" size="10rem"></b-avatar>
         </div>
         <div class="self-information">
-            <h1>Profil de : {{ name }} </h1>
-            <h2>E-mail : {{ email }} </h2>
+            <h1><b-icon icon="person-fill"></b-icon> Profil de : {{ name }} </h1>
+            <h2><b-icon icon="envelope"></b-icon> E-mail : {{ email }} </h2>
         </div>
     </div>
 </template>

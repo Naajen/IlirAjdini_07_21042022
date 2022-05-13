@@ -1,6 +1,6 @@
 <template>
     <div class="card-groupomania">
-        <h1><b-icon-pencil-fill></b-icon-pencil-fill> Modifier le post</h1>
+        <h1><b-icon-pencil-square></b-icon-pencil-square> Modifier le post</h1>
 
         <b-form @submit.prevent="submitForm" class="form">
             <b-form-group>
@@ -22,7 +22,7 @@
                 <b-form-file v-model="file" plain ref="file-input" accept="image/*" @change="onFilePicked"></b-form-file>
             </b-form-group>
         
-            <b-button type="submit" variant="success" :class="{ 'disabled' : invalidateFields }"><b-icon-pencil-fill></b-icon-pencil-fill> Enregistrer</b-button>
+            <b-button type="submit" variant="success" :class="{ 'disabled' : invalidateFields }"> Enregistrer</b-button>
         </b-form>
     </div>
 </template>

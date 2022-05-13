@@ -1,7 +1,7 @@
 <template>
     <header>
-        <b-navbar toggleable="lg" type="dark" variant="info" fixed="top">
-            <b-container class="dark">
+        <b-navbar toggleable="lg" type="light" variant="info" fixed="top">
+            <b-container class="light">
                 <b-navbar variant="faded" type="light">
                     <b-navbar-brand>
                         <router-link v-if="status != 'login'"  to="/" class="nav-link">
@@ -24,11 +24,11 @@
                             <router-link to="/Login" class="nav-link" exact><b-icon-box-arrow-in-right></b-icon-box-arrow-in-right> Connexion</router-link>
                         </li>
                         <li v-if="status == 'login'">
-                            <b-button @click="createPost()" pill variant="danger" class="btn-black"><b-icon-plus-circle-fill></b-icon-plus-circle-fill> Poster</b-button>
+                            <b-button @click="createPost()" pill variant="danger" class="btn-black"><b-icon-plus-circle-fill></b-icon-plus-circle-fill> Commencez à postez !</b-button>
                         </li>
-                        <li v-if="status == 'login'" class="nav-item">
-                            <router-link to="/posts" class="nav-link" exact><b-icon-list></b-icon-list> Tous les posts</router-link>
-                        </li>
+                        <!-- <li v-if="status == 'login'" class="nav-item">
+                            <router-link to="/posts" class="nav-link" exact><b-icon-list></b-icon-list> les posts</router-link>
+                        </li> -->
                         <b-nav-item-dropdown v-if="status == 'login' && userName" right>
                             <template #button-content><b-icon-person-fill></b-icon-person-fill> {{ userName }}</template>
                             <li>
@@ -38,7 +38,7 @@
                             </li>
                             <li>
                                 <router-link to="/modify-user" class="dropdown-item">
-                                    <b-icon-pencil-fill></b-icon-pencil-fill> Modification
+                                    <b-icon-pencil-square></b-icon-pencil-square> Modification
                                 </router-link>
                             </li>
                             <li>
@@ -53,7 +53,7 @@
                             </li>
                             <div v-if="isAdmin" class="dropdown-divider"></div>
                             <b-dropdown-item v-if="isAdmin" @click="allUsers()">
-                                <b-icon-person-lines-fill></b-icon-person-lines-fill> Administration
+                                <b-icon-person-lines-fill></b-icon-person-lines-fill> Admin Panel
                             </b-dropdown-item>
                             <div class="dropdown-divider"></div>
                             <b-dropdown-item @click="logout()">
@@ -100,7 +100,6 @@
             createPost: function() {
                 this.$router.push('/create-post');
             },
-            //TO DO
             allUsers: function() {
                 this.$router.push('/admin/users');
             }
@@ -137,7 +136,7 @@
     font-size: 0.7em;
 }
 .bg-info {
-    background-color: #2C2F33 !important;
+    background-color: #fff !important;
 }
 @media screen and (max-width:320px) {
     .logo  {

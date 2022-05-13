@@ -11,7 +11,7 @@
 
             <b-form-group>
                 <b-form-input placeholder="Mot de passe" type="password" v-model="$v.password.$model" :class="{ 'is-invalid' : $v.password.$error, 'is-valid' : !$v.password.$invalid }"></b-form-input>
-                <b-form-invalid-feedback>Le mot de passe doit avoir au moins 8 caractères, un nombre, une minuscule, et une majuscule</b-form-invalid-feedback>
+                <b-form-invalid-feedback>Le mot de passe doit avoir au moins 8 caractères, un nombre et une majuscule</b-form-invalid-feedback>
                 <b-form-valid-feedback>Le mot de passe est valide</b-form-valid-feedback>
             </b-form-group>
 

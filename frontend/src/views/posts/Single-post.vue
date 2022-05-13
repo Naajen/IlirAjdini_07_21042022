@@ -9,7 +9,7 @@
                 </div>
                 <div v-if="hasPostRole || isAdmin" class="user-actions">
                     <router-link v-if="hasPostRole && post.id" :to="{ name: 'modifyPost', params: { id: post.id }}">
-                        <b-button variant="success" class="btn-circle"><b-icon-pencil-fill></b-icon-pencil-fill></b-button>
+                        <b-button variant="success" class="btn-circle"><b-icon-pencil-square></b-icon-pencil-square></b-button>
                     </router-link>
                     <router-link v-if="(hasPostRole || isAdmin) && post.id" :to="{ name: 'deletePost', params: { id: post.id }}">
                         <b-button variant="danger" class="btn-circle"><b-icon-trash-fill></b-icon-trash-fill></b-button>
@@ -45,7 +45,7 @@
                     </div>
                     <div class="user-actions" v-if="hasCommentRole(index) || isAdmin">
                         <router-link v-if="hasCommentRole(index) && comment.id" :to="{ name: 'modifyComment', params: { postId: comment.postId, id: comment.id }}">
-                            <b-button variant="success" class="btn-circle"><b-icon-pencil-fill></b-icon-pencil-fill></b-button>
+                            <b-button variant="success" class="btn-circle"><b-icon-pencil-square></b-icon-pencil-square></b-button>
                         </router-link>
                         <router-link v-if="(hasCommentRole(index) || isAdmin) && comment.id" :to="{ name: 'deleteComment', params: { postId: comment.postId, id: comment.id }}">
                             <b-button variant="danger" class="btn-circle"><b-icon-trash-fill></b-icon-trash-fill></b-button>

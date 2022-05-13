@@ -15,11 +15,12 @@
         },
 
         methods: {
-            deletePost: function() {
+            deletePost: async function() {
                 const self = this;
                 this.$store.dispatch('deletePost')
                     .then(function() {
-                        self.$router.push('/')
+                        self.$router.push('/');
+                        document.location.href="http://localhost:8080/posts";
                     }, function(error) {
                         console.log(error);
                     })
