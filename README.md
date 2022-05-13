@@ -37,8 +37,10 @@ $ nodemon serve
 # install dependencies
 $ Projet cd frontend
 $ npm install
+
 # If error
 $ npm audit fix --force
+
 # Run frontend
 $ npm run serve
 
