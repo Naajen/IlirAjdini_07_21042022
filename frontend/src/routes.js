@@ -41,8 +41,6 @@ export default [
     { path: '/admin/users', name: 'allUsers', component: AllUsers },
     { path: '/admin/modify-user/:id', name: 'adminModifyUser', component: AdminModifyUser },
     { path: '/admin/delete-user/:id', name: 'adminDeleteUser', component: AdminDeleteUser },
-
-    //Like routes to do
     
     // 404
     { path: '*', name: 'notFound', component: NotFound }

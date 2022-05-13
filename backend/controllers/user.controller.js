@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models').User;
 
-const Sq = require('sequelize').Sq;
+const Op = require('sequelize').Op;
 
 // S'inscrire nom/email/password
 exports.signup = (req, res) => {
@@ -133,7 +133,7 @@ exports.getAllUsersByAdmin = (req, res) => {
     User.findAll({
             where: {
                 id: {
-                    [Sq.not]: userId
+                    [Op.not]: userId
                 }
             }
         }).then(users => res.status(200).json(users))

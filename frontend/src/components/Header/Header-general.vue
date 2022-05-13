@@ -101,9 +101,9 @@
                 this.$router.push('/create-post');
             },
             //TO DO
-            // allUsers: function() {
-            //     this.$router.push('/admin/users');
-            // }
+            allUsers: function() {
+                this.$router.push('/admin/users');
+            }
         }
     }
 </script>
