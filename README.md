@@ -14,7 +14,7 @@ Les 3 databases dans mySQL :
 
 
 # install dependencies
-$ Projet cd backend
+$ Projet/cd backend
 $ npm install
 $ npx sequelize-cli init
 
