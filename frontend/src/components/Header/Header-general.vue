@@ -100,15 +100,15 @@
             createPost: function() {
                 this.$router.push('/create-post');
             },
-
-            allUsers: function() {
-                this.$router.push('/admin/users');
-            }
+            //TO DO
+            // allUsers: function() {
+            //     this.$router.push('/admin/users');
+            // }
         }
     }
 </script>
 
-<!-- le scoped signifie que le css ne s'applique que à cette page -->
+<!-- le scoped signifie que le css ne s'applique qu'à cette page -->
 <style scoped >
 .ml-auto {
     margin-left: auto !important;

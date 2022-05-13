@@ -18,7 +18,7 @@
             </div>
             <div class="comment">
                 <router-link v-if="post.id" :to="{ name: 'singlePost', params: { id: post.id }}">
-                    <b-button variant="primary">Commenter <b-icon-chat-dots-fill></b-icon-chat-dots-fill></b-button>
+                    <b-button variant="primary">Commentaires <b-icon-chat-dots-fill></b-icon-chat-dots-fill></b-button>
                 </router-link>
             </div>
         </div>

@@ -26,7 +26,7 @@
         <div class="card-groupomania" id="comment">
             <b-form class="form" @submit.prevent="submitForm">
                 <b-form-group>
-                    <b-form-textarea placeholder="Commentaire" rows="4" max-rows="6" v-model="$v.content.$model" :class="{ 'is-invalid' : $v.content.$error, 'is-valid' : !$v.content.$invalid }"></b-form-textarea>
+                    <b-form-textarea placeholder="Ecrivez un commentaire ;)" rows="4" max-rows="6" v-model="$v.content.$model" :class="{ 'is-invalid' : $v.content.$error, 'is-valid' : !$v.content.$invalid }"></b-form-textarea>
                     <b-form-invalid-feedback>Le commentaire est requis</b-form-invalid-feedback>
                     <b-form-valid-feedback>Le commentaire est valide</b-form-valid-feedback>
                 </b-form-group>

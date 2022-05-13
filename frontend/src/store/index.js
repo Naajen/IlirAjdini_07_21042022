@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 const axios = require('axios')
 
+//l'instance axios !!
 const instance = axios.create({
     baseURL: 'http://localhost:3000/api/'
 })
@@ -308,7 +309,7 @@ export default new Vuex.Store({
 
         // Supprimer un post
         deletePost({ state }) {
-            // Si c'est l'admin, il peut supprimer n'importe quel post
+            // Admin to do list
             // Sinon l'utilisateur ne peut supprimer que son propre post
             if (state.userInfos.isAdmin) {
                 return new Promise((resolve, reject) => {

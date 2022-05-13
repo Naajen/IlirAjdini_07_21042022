@@ -71,6 +71,7 @@ exports.getOneUser = (req, res) => {
                     id: user.id,
                     name: user.name,
                     email: user.email,
+                    isAdmin: user.isAdmin
                 });
             } else {
                 res.status(404).json({
@@ -125,7 +126,7 @@ exports.deleteUser = (req, res) => {
         }));
 }
 
-// Afficher tous les utilisateurs sauf l'admin
+// TO DO
 exports.getAllUsersByAdmin = (req, res) => {
     const userId = req.params.id;
 

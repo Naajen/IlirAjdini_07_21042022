@@ -1,5 +1,5 @@
 const express = require ('express')
-//const helmet = require('helmet');
+const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('./config/db');
@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
-//app.use(helmet)
+app.use(helmet({crossOriginResourcePolicy: false,}));
 app.use(bodyParser.json());
 app.use(cors());
 
