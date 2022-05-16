@@ -11,7 +11,7 @@ router.get('/user/:id', auth, userController.getOneUser);
 router.put('/user/:id', auth, userController.modifyUser);
 router.delete('/user/:id', auth, userController.deleteUser);
 
-// Routes pour les admins <<< NON validé encore >>>
+// Routes pour les admins <<< validé ! >>>
 router.get('/admin/users/:id', auth, userController.getAllUsersByAdmin);
 router.put('/admin/users/:id', auth, userController.modifyUserRole);
 

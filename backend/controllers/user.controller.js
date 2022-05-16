@@ -126,7 +126,7 @@ exports.deleteUser = (req, res) => {
         }));
 }
 
-// TO DO
+// Afficher les users par l'admin
 exports.getAllUsersByAdmin = (req, res) => {
     const userId = req.params.id;
 

@@ -8,8 +8,6 @@ const cors = require("cors");
 const userRoutes = require('./routes/user');
 const postRoutes = require('./routes/post');
 
-
-
 const app = express();
 
 //retire les erreurs CORS / cross origin ressource sharing entre donne l'acces au partage de fichiers entre les localhost des serveurs
@@ -24,12 +22,15 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
-app.use(helmet({crossOriginResourcePolicy: false,}));
 app.use(bodyParser.json());
+
+//filtre les erreurs cors
 app.use(cors());
-
+//Erreur cors ajuster à cause de Multer
+app.use(helmet({crossOriginResourcePolicy: false,}));
+//direction pour stock les images
 app.use('/images', express.static(path.join(__dirname, 'images')));
-
+//utilisation des routes
 app.use('/api/auth', userRoutes);
 app.use('/api/posts', postRoutes);
 //exportation du module app pour les autres fichiers s'il n'est pas présent un  "app.set('port', port); erreur" 

@@ -45,7 +45,7 @@ export default new Vuex.Store({
         comments: [],
         comment: {}
     },
-
+    //Privilège
     getters: {
         userName: state => {
             return state.userInfos.name;
@@ -66,7 +66,6 @@ export default new Vuex.Store({
                 return false;
             }
         },
-        //To do
         isAdmin: state => {
             if (state.userInfos.isAdmin) {
                 return true;
