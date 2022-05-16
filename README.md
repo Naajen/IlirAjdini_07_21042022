@@ -3,10 +3,10 @@
 Projet de réseau social d'entreprise
 
 
-# Lancé l'installation BACKEND
+# Lancez l'installation BACK-END
 
 ```bash
-# Connecté vous à vôtre base de donnée mySQL & Créer les 3 databases
+# Connectez vous à votre base de donnée MySQL & Créez les 3 databases
 Les 3 databases dans mySQL :
 - 1er : groupomania
 - 2nd : groupomania_test
@@ -20,18 +20,18 @@ $ npx sequelize-cli init
 
 # Rendez vous dans le fichier "config/config.json"
 
-- Dans "development" configurer indiquer vôtre "username", "password" la première databases "groupomania"
-- Dans "test" faite pareil  mais changer la databases en "groupomania_test"
-- Dans "prod" faite pareil  mais changer la databases en "groupomania_prod"
+- Dans "development" configurez et indiquez votre "username", "password" la première database "groupomania"
+- Dans "test" faites pareil mais changer la database en "groupomania_test"
+- Dans "prod" faites pareil mais changer la database en "groupomania_prod"
 
 # Etablir la migration
 $ sequelize db:migrate
 
-# Lancer le server sur  écoute : localhost:3000
+# Lancez le server sur écoute : localhost:3000
 $ nodemon serve
 ```
 
-# Lancé l'installation BACKEND
+# Lancez l'installation FRONT-END
 
 ```bash
 # install dependencies

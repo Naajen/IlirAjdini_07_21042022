@@ -23,7 +23,7 @@
                             <router-link to="/Login" class="nav-link" exact><b-icon-box-arrow-in-right></b-icon-box-arrow-in-right> Connexion</router-link>
                         </li>
                         <li v-if="status == 'login'">
-                            <b-button @click="createPost()" pill variant="danger" class="btn-black"><b-icon-plus-circle-fill></b-icon-plus-circle-fill> Commencez à postez !</b-button>
+                            <b-button @click="createPost()" pill variant="danger" class="btn-black"><b-icon-plus-circle-fill></b-icon-plus-circle-fill> Commencez à poster !</b-button>
                         </li>
                         <!-- <li v-if="status == 'login'" class="nav-item">
                             <router-link to="/posts" class="nav-link" exact><b-icon-list></b-icon-list> les posts</router-link>
@@ -45,11 +45,6 @@
                                     <b-icon-trash-fill></b-icon-trash-fill> Suppression
                                 </router-link>
                             </li>
-                            <li>
-                                <router-link to="#" class="dropdown-item">
-                                   <p class="copyright">Groupomania &copy; {{ new Date().getFullYear() }}</p>
-                                </router-link>
-                            </li>
                             <div v-if="isAdmin" class="dropdown-divider"></div>
                             <b-dropdown-item v-if="isAdmin" @click="allUsers()">
                                 <b-icon-person-lines-fill></b-icon-person-lines-fill> Admin Panel
@@ -57,6 +52,9 @@
                             <div class="dropdown-divider"></div>
                             <b-dropdown-item @click="logout()">
                                 <b-icon-box-arrow-in-left></b-icon-box-arrow-in-left> Déconnexion
+                            </b-dropdown-item>
+                            <b-dropdown-item>
+                                <p class="copyright">Groupomania &copy; {{ new Date().getFullYear() }}</p>
                             </b-dropdown-item>
                         </b-nav-item-dropdown>
                     </b-navbar-nav>
@@ -112,7 +110,8 @@
     margin-left: auto !important;
 }
 .copyright {
-    font-size: 0.9em;
+    font-size: 0.8em;
+    margin:0px;
 }
 .logo {
     width: 230px;
@@ -129,10 +128,6 @@
 
 .navbar-nav button.btn-danger {
     margin: 0 8px;
-}
-.copyright {
-    margin-top: 15px;
-    font-size: 0.7em;
 }
 .bg-info {
     background-color: #fff !important;

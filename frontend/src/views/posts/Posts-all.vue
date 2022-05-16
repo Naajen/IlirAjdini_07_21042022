@@ -18,7 +18,7 @@
             </div>
             <div class="comment">
                 <router-link v-if="post.id" :to="{ name: 'singlePost', params: { id: post.id }}">
-                    <b-button variant="primary">Commentaires <b-icon-chat-dots-fill></b-icon-chat-dots-fill></b-button>
+                    <b-button style="border-radius:20px" variant="primary">Commentaires <b-icon-chat-dots-fill></b-icon-chat-dots-fill></b-button>
                 </router-link>
             </div>
         </div>
@@ -95,7 +95,6 @@
         text-align: center;
         margin-left: 10px;
     }
-
     .btn-circle .b-icon {
         width: 16px;
         vertical-align: baseline;
@@ -112,19 +111,19 @@
 
     .post-link {
         text-decoration: none;
-        color: #FD2D01;
+        color: #dc3545;
         transition: all .3s ease-in-out;
     }
 
     .post-link:hover {
         text-decoration: underline;
-        color: #FD2D01;
+        color: #dc3545;
     }
 
     .post-title {
         font-size: 20px;
         font-weight: bold;
-        color: #FD2D01;
+        color: #dc3545;
         margin-bottom: 15px;
     }
 
