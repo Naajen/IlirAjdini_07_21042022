@@ -6,9 +6,9 @@
             <b-button  variant="danger" @click="deleteUser()"><b-icon-trash-fill></b-icon-trash-fill> Supprimer</b-button>
         </div>
         <div v-if="$store.state.userInfos.isAdmin">
-            <h1><b-icon-trash-fill></b-icon-trash-fill> Vous etes l'adminitrateur !</h1>
-            <p>Avant de partir pensez à vous faire remplacer</p>
-            <b-button variant="danger" @click="redirectionAdmin()">Back</b-button>
+            <h1><b-icon-trash-fill></b-icon-trash-fill> Vous êtes l'adminitrateur !</h1>
+            <p>Avant de partir, pensez à vous faire remplacer.</p>
+            <b-button style="border-radius:20px" variant="danger" @click="redirectionAdmin()">Retour</b-button>
         </div>
     </div>
 </template>

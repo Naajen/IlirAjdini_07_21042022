@@ -23,7 +23,7 @@
 
             <b-alert v-if="status == 'error_create'" variant="danger" show><b-icon-exclamation-triangle></b-icon-exclamation-triangle> Adresse email déjà utilisée</b-alert>
 
-            <b-button type="submit" variant="primary" :class="{ 'disabled' : invalidateFields }"><b-icon-person-plus-fill></b-icon-person-plus-fill>
+            <b-button type="submit" style="border-radius:20px" variant="primary" :class="{ 'disabled' : invalidateFields }"><b-icon-person-plus-fill></b-icon-person-plus-fill>
                 <span v-if="status == 'loading'"> Inscription en cours...</span>
                 <span v-else> S'inscrire</span>
             </b-button>

@@ -26,7 +26,7 @@
                             <b-button @click="createPost()" pill variant="danger" class="btn-black"><b-icon-plus-circle-fill></b-icon-plus-circle-fill> Commencez à poster !</b-button>
                         </li>
                         <!-- <li v-if="status == 'login'" class="nav-item">
-                            <router-link to="/posts" class="nav-link" exact><b-icon-list></b-icon-list> les posts</router-link>
+                            <router-link to="/posts" class="nav-link" exact><b-icon-list></b-icon-list> L'actu</router-link>
                         </li> -->
                         <b-nav-item-dropdown v-if="status == 'login' && userName" right>
                             <template #button-content><b-icon-person-fill></b-icon-person-fill> {{ userName }}</template>

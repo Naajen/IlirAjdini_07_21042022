@@ -13,7 +13,7 @@
                     <label class="form-check-label" for="user">Utilisateur</label>
                 </div>
             </div>
-            <b-button type="submit" variant="success"> Enregistrer</b-button>
+            <b-button type="submit" style="border-radius:20px" variant="success"> Enregistrer</b-button>
         </b-form>
     </div>
 </template>

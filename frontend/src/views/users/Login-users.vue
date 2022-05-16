@@ -17,7 +17,7 @@
 
             <b-alert v-if="status == 'error_login'" variant="danger" show><b-icon-exclamation-triangle></b-icon-exclamation-triangle> Adresse email et/ou mot de passe invalide</b-alert>
 
-            <b-button type="submit" variant="primary" :class="{ 'disabled' : invalidateFields }"><b-icon-box-arrow-in-right></b-icon-box-arrow-in-right>
+            <b-button style="border-radius:20px" type="submit" variant="primary" :class="{ 'disabled' : invalidateFields }"><b-icon-box-arrow-in-right></b-icon-box-arrow-in-right>
                 <span v-if="status == 'loading'"> Connexion en cours...</span>
                 <span v-else> Se connecter</span>
             </b-button>

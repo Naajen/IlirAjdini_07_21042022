@@ -8,7 +8,7 @@
                 <b-form-invalid-feedback>Le commentaire est requis</b-form-invalid-feedback>
                 <b-form-valid-feedback>Le commentaire est valide</b-form-valid-feedback>
             </b-form-group>
-            <b-button type="submit" variant="success" :class="{ 'disabled' : invalidateFields }"> Modifier</b-button>
+            <b-button type="submit" style="border-radius:20px" variant="success" :class="{ 'disabled' : invalidateFields }"> Modifier</b-button>
         </b-form>
     </div>
 </template>
