@@ -12,7 +12,6 @@
                         </router-link>
                     </b-navbar-brand>
                 </b-navbar>
-
                 <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
                 <b-collapse id="nav-collapse" is-nav>
@@ -137,6 +136,7 @@
 }
 .bg-info {
     background-color: #fff !important;
+    border-bottom: #dc3545 2px solid;
 }
 @media screen and (max-width:320px) {
     .logo  {

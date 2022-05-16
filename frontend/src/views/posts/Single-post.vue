@@ -174,4 +174,10 @@
         font-weight: 300;
         margin-bottom: 5px;
     }
+        .post-image {
+        max-height: 1000px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 </style>
