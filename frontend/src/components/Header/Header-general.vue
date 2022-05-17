@@ -16,6 +16,12 @@
 
                 <b-collapse id="nav-collapse" is-nav>
                     <b-navbar-nav class="ml-auto">
+                        <li v-if="status == 'login'" class="nav-item">
+                            <router-link to="/" class="nav-link" exact><b-icon-newspaper></b-icon-newspaper> L'actu</router-link>
+                        </li>
+                        <li v-if="status == 'login'" class="nav-item">
+                            <router-link to="/posts" class="nav-link" exact><b-icon-emoji-smile></b-icon-emoji-smile> Go fun Yourself</router-link>
+                        </li>
                         <li v-if="status != 'login'" class="nav-item">
                             <router-link to="/signup" class="nav-link"><b-icon-person-plus-fill></b-icon-person-plus-fill> Inscription</router-link>
                         </li>
@@ -25,9 +31,6 @@
                         <li v-if="status == 'login'">
                             <b-button @click="createPost()" pill variant="danger" class="btn-black"><b-icon-plus-circle-fill></b-icon-plus-circle-fill> Commencez à poster !</b-button>
                         </li>
-                        <!-- <li v-if="status == 'login'" class="nav-item">
-                            <router-link to="/posts" class="nav-link" exact><b-icon-list></b-icon-list> L'actu</router-link>
-                        </li> -->
                         <b-nav-item-dropdown v-if="status == 'login' && userName" right>
                             <template #button-content><b-icon-person-fill></b-icon-person-fill> {{ userName }}</template>
                             <li>
@@ -118,7 +121,7 @@
     height: auto;
 }
 .nav-link.router-link-exact-active {
-    color: #FFF !important;
+    color: #dc3545 !important;
 }
 
 .navbar-nav {

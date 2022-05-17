@@ -17,6 +17,7 @@ import AdminDeleteUser from './views/admin/Delete-admin'
 import NotFound from './views/404-error'
 
 export default [
+    // Main routes (Actualité to do)
     {path: '/', name:'main', component: Main},
     // User routes
     { path: '/login', name: 'login', component: Login },
@@ -37,7 +38,7 @@ export default [
     { path: '/post/:postId/modify-comment/:id', name: 'modifyComment', component: ModifyComment },
     { path: '/post/:postId/delete-comment/:id', name: 'deleteComment', component: DeleteComment },
 
-    // Admin routes to do 
+    // Admin routes
     { path: '/admin/users', name: 'allUsers', component: AllUsers },
     { path: '/admin/modify-user/:id', name: 'adminModifyUser', component: AdminModifyUser },
     { path: '/admin/delete-user/:id', name: 'adminDeleteUser', component: AdminDeleteUser },
