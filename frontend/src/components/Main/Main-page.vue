@@ -9,6 +9,7 @@
 <style scoped>
 #front-img {
     width: 100%;
+    max-height: 650px;
 }
 #front-title {
     font-size: 1.4em;
