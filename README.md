@@ -20,10 +20,10 @@ créions un réseau social d’entreprise pour faciliter les échanges entre col
 * le ou la chargé-e de communication Groupomania doit pouvoir modérer les interactions entre
 salariés ;
 
-# Lancez l'installation BACK-END
+# Lancer l'installation BACK-END
 
 ```bash
-# Connectez vous à votre base de donnée MySQL & Créez les 3 databases
+# Connecter vous à votre base de donnée MySQL & Créer les 3 databases
 Les 3 databases dans mySQL :
 - 1er : groupomania
 - 2nd : groupomania_test
@@ -35,27 +35,27 @@ $ Projet/cd backend
 $ npm install
 $ npx sequelize-cli init
 
-# Rendez vous dans le fichier "db.js"
+# Rendez-vous dans le fichier "db.js"
 Changer les paramètres suivant:
     username: "votre root ou username",
     password: "votre mot de passe",
     database: "votre base de donnée"
 
-# Rendez vous dans le fichier "config/config.json"
+# Rendez-vous dans le fichier "config/config.json"
 
-- Dans "development" configurez et indiquez votre "username", "password" la première database "groupomania"
+- Dans "development" configurer et indiquer votre "username", "password" la première database "groupomania"
 - Dans "test" faites pareil mais changer la database en "groupomania_test"
 - Dans "prod" faites pareil mais changer la database en "groupomania_prod"
 
 # Etablir la migration
 Ajouter les tables dans la base de données Users,Comments et Posts avec les paramètres 
-présent dans le dossier migration
+présent dans le dossier migration.
 
-# Lancez le server sur écoute : localhost:3000
+# Lancer le server sur écoute : localhost:3000
 $ nodemon serve
 ```
 
-# Lancez l'installation FRONT-END
+# Lancer l'installation FRONT-END
 
 ```bash
 # install dependencies
