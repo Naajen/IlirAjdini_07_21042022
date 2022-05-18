@@ -1,6 +1,13 @@
 # Projet GROUPOMANIA
-En tant que developpeur et travaillant dans la société CONNECT-E, depuis plus de un ans. Ma mission à été de réaliser le réseau social d'entreprise "Groupomania". Le Site actuellement en MVP, il est en cour d'élaboration, mais reste néanmoins une version testable et utilisable
+En tant que developpeur web et travaillant dans la société CONNECT-E, depuis plus d'un ans. Ma mission a été de réaliser 
+le réseau social d'entreprise "Groupomania". Le site est actuellement en MVP, il est en cour d'élaboration, mais reste 
+néanmoins une version testable et utilisable.
 
+# Contexte 
+
+Après une enquête interne, au sein de leurs locaux, ils ont remarqué une baisse de la motivation de leurs employés suite 
+à une mauvaise communication et ambiance entre eux. Afin de pallier à ce problème, la direction souhaite que nous leur 
+créions un réseau social d’entreprise pour faciliter les échanges entre collègues et départements.
 # Voici les exigences émises par le comité de pilotage :
 
 * la présentation des fonctionnalités doit être simple ;
@@ -41,7 +48,8 @@ Changer les paramètres suivant:
 - Dans "prod" faites pareil mais changer la database en "groupomania_prod"
 
 # Etablir la migration
-Ajouter les tables dans la base de données Users,Comments et Posts avec les paramètres présent dans le dossier migration
+Ajouter les tables dans la base de données Users,Comments et Posts avec les paramètres 
+présent dans le dossier migration
 
 # Lancez le server sur écoute : localhost:3000
 $ nodemon serve
